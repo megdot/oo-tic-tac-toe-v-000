@@ -19,23 +19,23 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-  
+
   def input_to_index(user_input)
     user_input.to_i - 1
   end
-  
+
  def move(index,current_player)
    @board[index] = current_player
  end
- 
+
  def position_taken?(location)
    @board[location] != " " && @board[location] != ""
  end
- 
+
  def valid_move?(index)
    index.between?(0,8) && !position_taken?(index) ? true:false
  end
- 
+
  def turn
    puts "Please enter 1-9:"
    input = gets.strip
@@ -46,8 +46,8 @@ class TicTacToe
    else
     turn
   end
- end 
- 
+ end
+
  def turn_count
      counter=0
    @board.each do |turn|
@@ -65,7 +65,7 @@ class TicTacToe
   win_index_1 = win_combination[0]
   win_index_2 = win_combination[1]
   win_index_3 = win_combination[2]
- 
+
   position_1 = @board[win_index_1]
   position_2 = @board[win_index_2]
   position_3 = @board[win_index_3]
@@ -103,5 +103,5 @@ class TicTacToe
     puts "Cat's Game!"
   end
   end
-  
+
 end
